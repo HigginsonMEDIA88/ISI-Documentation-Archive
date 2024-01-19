@@ -1,4 +1,3 @@
-![alt text](https://github.com/HigginsonMEDIA88/ISI-Documentation-Archive/blob/main/.github/rdp.png?raw=true)
 
 ### An archive containing a whole heap of documentation and old tips and tricks used in Automobilista and rFactor. Original documents credited to their original creators.
 ## What is this?
