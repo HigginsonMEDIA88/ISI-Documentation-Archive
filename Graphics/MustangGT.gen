@@ -1,0 +1,301 @@
+// Ford Mustang GT S650 Ingame car generation file
+//----------------------------------------
+SearchPath=<TEAMDIR>..\
+SearchPath=<TEAMDIR>
+SearchPath=<VEHDIR>
+SearchPath=<VEHDIR>\Gen3SupercarsAustralia
+SearchPath=<VEHDIR>\Gen3SupercarsAustralia\MustangGTS650\
+//SearchPath=<VEHDIR>\Gen3SupercarsAustralia\MustangGTS650\GMT
+//SearchPath=<VEHDIR>\Gen3SupercarsAustralia\MustangGTS650\MAP
+
+MASFile=Gen3SupercarsAustralia\MustangGTS650\MUS_S650_GMT.mas
+MASFile=Gen3SupercarsAustralia\MustangGTS650\MUS_S650_MAP.mas
+MASFile=Gen3SupercarsAustralia\GEN3_STEX.mas
+MASFile=Gen3SupercarsAustralia\SuperV8.mas
+MASFile=Gen3SupercarsAustralia\SuperV8_maps.mas
+MASFile=Gen3SupercarsAustralia\SuperV8Update.mas
+MASFile=cmaps.mas
+MASFile=vehicle_commonmaps.mas
+
+//----------------------------------------
+
+Instance=SLOT<ID>
+{
+  Moveable=True
+  MeshFile=G3M_BODY.gmt        CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(400.0)  ShadowReceiver=True
+  MeshFile=g3M_Chassis.gmt     CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(200.0) ShadowReceiver=True
+
+//------------------------------------SHADOW AND COLLISION OBJECTS---------------------------------
+  MeshFile=collshad.gmt Render=False CollTarget=True HATTarget=False Render=False LODIn=(0.0) LODOut=(1.0)
+  MeshFile=collshad.gmt Render=False CollTarget=False HATTarget=False ShadowObject=(True, Solid, 256, 256, SUPERV8_UNDERSHAD.dds) LODIn=(0.0) LODOut=(200.0)
+
+  Actor=VEHICLE
+<STARTUPGRADES>
+/////////////////////////////////////////////////// COCKPIT ///////////////////////////////////////////////////
+
+  Instance=COCKPIT<UPNUMBER>
+  {
+    Moveable=True
+    MeshFile=G3M_BODY.gmt          CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=g3_numlights.gmt      CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=g3M_Chassis.gmt       CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=<DASHTYPE>            CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=g3m_ldoor_c.gmt       CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=g3m_rdoor_c.gmt       CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=G3m_INTMIRROR_C.gmt   Render=True CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=G3m_INTMIRROR_L.gmt   Render=True CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=G3m_INTMIRROR_R.gmt   Render=True CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=G3M_INT_GLASS.gmt     CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=G3M_SEAT.gmt          CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=G3M_WING.gmt          CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=G3M_INT_DETAIL.gmt    CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=G3M_NET.gmt           CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=g3m_mircap_l.gmt      CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=g3m_mirror_l.gmt      CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=g3m_mircap_r.gmt      CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=g3m_mirror_r.gmt      CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+    MeshFile=G3M_Wiper.gmt      CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0) ShadowReceiver=True
+  }
+
+/////////////////////////////////////////////////// STEERING WHEEL ///////////////////////////////////////////////////
+
+  Instance=WHEEL
+  {
+    Moveable=True
+    MeshFile=G3M_SWHEEL_INT.GMT CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(4.0)  ShadowReceiver=True
+    MeshFile=G3M_SWHEEL_EXT.GMT CollTarget=False HATTarget=False LODIn=(4.0) LODOut=(40.0) ShadowReceiver=True
+    MeshFile=G3M_SWHEEL_EXT.GMT CollTarget=False HATTarget=False LODIn=(40.0) LODOut=(80.0) ShadowReceiver=True
+  }
+
+/////////////////////////////////////////////////// DRIVER BODY ///////////////////////////////////////////////////
+
+ Instance=BODY
+ {
+   Moveable=True
+   MeshFile=G3M_driver.gmt     CollTarget=False HATTarget=False LODIn=(0.0)  LODOut=(125.0)  ShadowReceiver=True
+ }
+
+///////////////////////////////////////////////// HELMET ///////////////////////////////////////////////////
+
+ Instance=HELMET
+ {
+   Moveable=True
+   MeshFile=G3M_helmet.gmt     CollTarget=False HATTarget=False LODIn=(0.0)  LODOut=(125.0)   ShadowReceiver=True
+ }
+
+/////////////////////////////////////////////////// DEBRIS ///////////////////////////////////////////////////
+  Instance=LMIRROR
+  {
+    Moveable=True
+  MeshFile=g3m_mircap_l.gmt        CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(400.0)  ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  MeshFile=g3m_mirror_l.gmt        CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(400.0)  ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+  Instance=RMIRROR
+  {
+    Moveable=True
+  MeshFile=g3m_mircap_r.gmt        CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(400.0)  ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  MeshFile=g3m_mirror_r.gmt        CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(400.0)  ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+/////////////////////////////////////////////////// FRONT BUMPER ///////////////////////////////////////////////////
+
+  Instance=FBAR
+  {
+    Moveable=True
+//------------------------------------MAX CAR SETTINGS---------------------------------------------
+  MeshFile=G3M_FBAR.gmt        CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(400.0)  ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+/////////////////////////////////////////////////// REAR BUMPER ///////////////////////////////////////////////////
+
+  Instance=DOORL
+  {
+    Moveable=True
+    //------------------------------------MAX CAR SETTINGS---------------------------------------------
+      MeshFile=g3m_ldoor_c.gmt         CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(400.0)  ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+  Instance=DOORR
+  {
+    Moveable=True
+    //------------------------------------MAX CAR SETTINGS---------------------------------------------
+      MeshFile=g3m_rdoor_c.gmt         CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(400.0)  ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+/////////////////////////////////////////////////// BODY PARTS ///////////////////////////////////////////////////
+
+//  Instance=CHASSIS
+//  {
+//    Moveable=True
+//    MeshFile=G3M_CAGE_LOW.gmt      CollTarget=False HATTarget=False LODIn=(0.0)  LODOut=(200.0)  ShadowReceiver=True
+//  }
+
+  Instance=DEBRIS0
+  {
+    Moveable=True
+//------------------------------------MAX CAR SETTINGS---------------------------------------------
+  MeshFile=g3m_hood_c.gmt         CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(400.0)  ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+  Instance=RWING
+  {
+    Moveable=True
+//------------------------------------MAX CAR SETTINGS---------------------------------------------
+  MeshFile=G3M_WING.gmt         CollTarget=False HATTarget=False LODIn=(0.0)   LODOut=(400.0)  ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+  Instance=G3M_Headlights
+  {
+    Moveable=True
+    MeshFile=G3M_headlights.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(300.0) ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+  Instance=G3M_NET
+  {
+    Moveable=True
+    MeshFile=G3M_NET.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(300.0) ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+  Instance=G3M_EXT_DETAIL.gmt
+  {
+    Moveable=True
+    MeshFile=G3M_INT_DETAIL.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(150.0) ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+  Instance=Seat.gmt 
+  {
+    Moveable=True
+    MeshFile=G3M_SEAT.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(300.0) ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+  Instance=G3M_DASH 
+  {
+    Moveable=True
+    MeshFile=<EXTDASHTYPE>  CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(300.0) ShadowReceiver=True Shadowcaster=(True, Solid, 64, 64)
+  }
+
+//  Instance=TIRELIGHT
+//  {
+//    Moveable=true
+//    MeshFile=Tirelights.gmt CollTarget=True HATTarget=False LODIn=(0.0) LODOut=(400.0)
+//  }
+
+  /////////////////////////////////////////////////// WINDOWS ///////////////////////////////////////////////////
+
+  Instance=WINDOWSOUT
+  {
+    Moveable=True
+    MeshFile=<WINDOWSOUT> CollTarget=False HATTarget=False ShadowReceiver=True LODIn=(0.0) LODOut=(400.0)
+    MeshFile=g3_numlights.gmt CollTarget=False HATTarget=False ShadowReceiver=True LODIn=(0.0) LODOut=(400.0)
+  }
+
+  /////////////////////////////////////////////////// JACK CAP ///////////////////////////////////////////////////
+
+  Instance=AirJackCap
+  {
+    Moveable=True
+    MeshFile=<AirJackCap> CollTarget=False HATTarget=False ShadowReceiver=True LODIn=(0.0) LODOut=(400.0)
+  }
+<STOPUPGRADES>
+
+/////////////////////////////////////////////////// HEADLIGHTS ///////////////////////////////////////////////////
+
+  Projector=Headlight
+  {
+    Moveable=True Dyn=True Active=False Pos=(0.0, 0.0, -49.65) Dir=(0.0, -0.3, -0.7) Radius=(20.0) Blend=(InvDstColor, One) Texmap=night_lightfield.tga
+  }
+
+  Instance=HLIGHTDS   //Headlights -Driver Side
+  {
+    Moveable=True
+    MeshFile=hlglo_ds.gmt CollTarget=False HATTarget=False ShadowReceiver=True LODIn=(0.0) LODOut=(250.0) 
+  }
+
+  Instance=HLIGHTPS   //Headlights -Passenger Side
+  {
+    Moveable=True
+    MeshFile=hlglo_ps.gmt CollTarget=False HATTarget=False ShadowReceiver=True LODIn=(0.0) LODOut=(250.0) 
+  }
+
+  Instance=BLIGHTDS   //Brakelights -Driver Side
+  {
+    Moveable=True
+    MeshFile=blglo_ds.gmt CollTarget=False HATTarget=False ShadowReceiver=True LODIn=(0.0) LODOut=(200.0) 
+  }
+
+  Instance=BLIGHTPS  //Brakelights -Passenger Side
+  {
+    Moveable=True
+    MeshFile=blglo_ps.gmt CollTarget=False HATTarget=False ShadowReceiver=True LODIn=(0.0) LODOut=(200.0)  
+  }
+
+/////////////////////////////////////////////////// TYRES AND SPINDLE ///////////////////////////////////////////////////
+
+  Instance=LFTIRE
+  {
+    Moveable=True
+     MeshFile=G3M_lf_wheel.gmt CollTarget=True HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) ShadowReceiver=True LODIn=(0.0) LODOut=(400.0)
+  }
+
+  Instance=RFTIRE
+  {
+    Moveable=True
+    MeshFile=G3M_rf_wheel.gmt CollTarget=True HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) ShadowReceiver=True LODIn=(0.0) LODOut=(400.0)
+
+  }
+
+  Instance=LRTIRE
+  {
+    Moveable=True
+     MeshFile=G3M_lr_wheel.gmt CollTarget=True HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) ShadowReceiver=True LODIn=(0.0) LODOut=(400.0)
+  }
+
+  Instance=RRTIRE
+  {
+    Moveable=True
+     MeshFile=G3M_rr_wheel.gmt CollTarget=True HATTarget=False ShadowCaster=(Dynamic, Solid, 64, 64) ShadowReceiver=True LODIn=(0.0) LODOut=(400.0)
+  }
+  
+  Instance=LFSPINDLE
+  {
+    Moveable=True
+    MeshFile=G3_LF_HUB_A.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(10.0)
+	    MeshFile=G3_LF_DGLOW.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(150.0)
+  }
+
+  Instance=RFSPINDLE
+  {
+    Moveable=True
+    MeshFile=G3_RF_HUB_A.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(10.0)
+	    MeshFile=G3_RF_DGLOW.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(150.0)
+  }
+
+  Instance=LRSPINDLE
+  {
+    Moveable=True
+    MeshFile=G3_LR_HUB_A.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(10.0)
+	    MeshFile=G3_LR_DGLOW.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(150.0)
+  }
+
+  Instance=RRSPINDLE
+  {
+    Moveable=True
+    MeshFile=G3_RR_HUB_A.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(10.0)
+	    MeshFile=G3_RR_DGLOW.gmt CollTarget=False HATTarget=False LODIn=(0.0) LODOut=(150.0)
+  }
+
+/////////////////////////////////////////////////// EFFECTS ///////////////////////////////////////////////////
+
+//  Instance=BACKFIRE
+//  {
+//    Moveable=True
+//    MeshFile=tirelights.gmt CollTarget=False HATTarget=False ShadowReceiver=False LODIn=(0.0) LODOut=(100.0)  
+//  }
+  
+  Instance=RAINLIGHT
+  {
+    Moveable=True
+    MeshFile=g3m_rainlights.gmt CollTarget=False HATTarget=False LODIn=(0.00) LODOut=(250.0) ShadowReceiver=True
+  }
+
+}
